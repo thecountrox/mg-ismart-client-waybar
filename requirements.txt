@@ -1,3 +1,3 @@
-requests
-asn1tools
-pycryptodome
+requests==2.34.2
+asn1tools==0.169.0
+pycryptodome==3.23.0
