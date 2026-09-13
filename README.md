@@ -2,6 +2,14 @@
 
 Lightweight MG iSMART India client + Waybar car-ETA module.
 
+## Requirements
+
+- Python 3.10+ (tested on 3.14)
+- `pip install -r requirements.txt` → `requests`, `asn1tools`, `pycryptodome`
+  (`car_waybar.py` itself is stdlib-only; it imports the client above)
+- Waybar (only for the bar module, not the CLI)
+- `MAPBOX_TOKEN` (optional; without it you get straight-line distance, no road ETA)
+
 ## Setup
 
 ```bash
@@ -11,6 +19,8 @@ cp .env.example .env  # then fill in values, never commit .env
 
 `.env` keys: `MG_PHONE`, `MG_PASSWORD`, `HOME_LAT`, `HOME_LON`,
 `MAPBOX_TOKEN` (road ETA), optional `MG_VIN`, `MG_PIN`, `GEOFENCE_M`.
+`MG_VIN` is not normally needed: the first vehicle on the account is selected
+automatically. Set it only when the account has more than one vehicle.
 
 CLI:
 
